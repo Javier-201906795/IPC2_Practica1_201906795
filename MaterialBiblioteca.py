@@ -8,13 +8,14 @@
 #devolverlo()
 #Mostrar su informacion()
 
+import random
 
 class MatBiblioteca():
 
-    def __init__(self, titulo, autor, ID, estado):
+    def __init__(self, titulo, autor, estado):
         self.titulo = titulo
         self.modelo = autor
-        self.ID = ID
+        self.ID = random.randint(1000,90000)
         self.estado = estado
 
     def gettitulo (self):
