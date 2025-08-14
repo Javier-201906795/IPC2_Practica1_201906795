@@ -32,7 +32,18 @@ print(Libro1.devolver())
 
 print(Libro1.mostrarinfo())
 
+print(Libro1.prestarLibro(1,5))
+print(Libro1.getestado())
+print(Libro1.devolverLibro(1,10))
 
+print(Libro1.prestarLibro(1,29))
+print(Libro1.getestado())
+print(Libro1.devolverLibro(2,1))
+
+
+print(Libro1.prestarLibro(1,30))
+print(Libro1.getestado())
+print(Libro1.devolverLibro(2,15))
 
 
 

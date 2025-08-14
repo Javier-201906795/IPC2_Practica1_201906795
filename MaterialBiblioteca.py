@@ -69,3 +69,8 @@ class MatBiblioteca():
             return True
         else:
             return False
+
+    def mostrarinfo():
+        print("mostrar info")
+        pass
+        
