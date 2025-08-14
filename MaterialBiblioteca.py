@@ -23,11 +23,11 @@ class MatBiblioteca():
         return newID[-8:]
         
 
-    def __init__(self, titulo, autor, estado):
+    def __init__(self, titulo, autor):
         self.titulo = titulo
         self.modelo = autor
         self.ID = self.nuevoID()
-        self.estado = estado
+        self.estado = "Disponible"
 
     
 

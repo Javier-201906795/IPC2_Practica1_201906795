@@ -8,8 +8,8 @@ from MaterialBiblioteca import MatBiblioteca
 
 
 class LibFisico(MatBiblioteca):
-    def __init__(self, titulo, autor, estado, numejemplar):
-        super().__init__(titulo, autor, estado)
+    def __init__(self, titulo, autor, numejemplar):
+        super().__init__(titulo, autor)
         self.numejemplar = numejemplar
 
     def gettitulolibro(self):

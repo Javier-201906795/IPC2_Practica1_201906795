@@ -11,12 +11,12 @@ import random
 
 print("Practica 1")
 print("nuevo libro")
-Libro1 = LibFisico("El principito", "Desconocido", "Libre", 1)
+Libro1 = LibFisico("El principito", "Desconocido",  1)
 print(Libro1.gettitulolibro())
 print(Libro1.gettitulo())
 print(Libro1.getID())
 
-print(Libro1.setestado(False))
+print(Libro1.setestado("Prestado"))
 print(Libro1.getestado())
 
 
