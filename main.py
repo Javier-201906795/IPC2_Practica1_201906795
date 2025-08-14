@@ -17,38 +17,38 @@ Libro2 = LibDigital("El hombre araña", "marvel",  15)
 
 
 
-print(Libro2.gettitulo())
-print(Libro2.getID())
+# print(Libro2.gettitulo())
+# print(Libro2.getID())
 
 
-print(Libro2.getestado())
+# print(Libro2.getestado())
 
-print(Libro2.prestar())
+# print(Libro2.prestar())
 
-print(Libro2.getestado())
-print(Libro2.prestar())
+# print(Libro2.getestado())
+# print(Libro2.prestar())
 
-print(Libro2.devolver())
+# print(Libro2.devolver())
 
-print(Libro2.getestado())
+# print(Libro2.getestado())
 
-print(Libro2.devolver())
+# print(Libro2.devolver())
 
-print(Libro2.mostrarinfo())
+# print(Libro2.mostrarinfo())
 
-print(Libro2.prestarLibro(1,5))
-print(Libro2.getestado())
-print(Libro2.devolverLibro(1,7))
-print(Libro2.mostrarinfo())
+# print(Libro2.prestarLibro(1,5))
+# print(Libro2.getestado())
+# print(Libro2.devolverLibro(1,7))
+# print(Libro2.mostrarinfo())
 
-print(Libro2.prestarLibro(1,29))
-print(Libro2.getestado())
-print(Libro2.devolverLibro(2,1))
+# print(Libro2.prestarLibro(1,29))
+# print(Libro2.getestado())
+# print(Libro2.devolverLibro(2,1))
 
 
-print(Libro2.prestarLibro(1,30))
-print(Libro2.getestado())
-print(Libro2.devolverLibro(2,15))
+# print(Libro2.prestarLibro(1,30))
+# print(Libro2.getestado())
+# print(Libro2.devolverLibro(2,15))
 
 
 #####################################################
