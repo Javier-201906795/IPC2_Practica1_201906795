@@ -16,6 +16,9 @@ print(Libro1.gettitulolibro())
 print(Libro1.gettitulo())
 print(Libro1.getID())
 
+print(Libro1.setestado(False))
+print(Libro1.getestado())
+
 
 
 

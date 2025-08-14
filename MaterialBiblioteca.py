@@ -42,5 +42,15 @@ class MatBiblioteca():
     
     def getestado (self):
         return self.estado
+    
+    def settitulo (self, txttitulo):
+        self.titulo = txttitulo
+        return True
 
-
+    def setmodelo (self, txtmodelo):
+        self.modelo = txtmodelo
+        return True
+    
+    def setestado (self, txtestado):
+        self.estado = txtestado
+        return True
