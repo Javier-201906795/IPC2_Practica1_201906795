@@ -54,3 +54,12 @@ class MatBiblioteca():
     def setestado (self, txtestado):
         self.estado = txtestado
         return True
+
+
+    def prestar(self):
+        if self.estado == "Disponible":
+            self.estado = "Prestado"
+            return True
+        else:
+            return False
+        

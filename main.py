@@ -16,8 +16,15 @@ print(Libro1.gettitulolibro())
 print(Libro1.gettitulo())
 print(Libro1.getID())
 
-print(Libro1.setestado("Prestado"))
+
 print(Libro1.getestado())
+
+print(Libro1.prestar())
+
+print(Libro1.getestado())
+print(Libro1.prestar())
+
+
 
 
 
