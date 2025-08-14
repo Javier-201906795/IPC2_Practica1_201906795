@@ -28,9 +28,6 @@ class LibFisico(MatBiblioteca):
             return True
         else:
             return False
-        
-    
-    
 
     
     def devolverLibro(self, mes, dia):
