@@ -14,4 +14,6 @@ class LibFisico(MatBiblioteca):
 
     def gettitulolibro(self):
         return self.gettitulo()
-        
+    
+    def mostrarinfo(self):
+        return f"Titulo: {self.gettitulo()}, Autor: {self.getmodelo()}, ID: {self.getID()}, Estado: {self.getestado()}, Ejemplar: {self.numejemplar}, Libro: Fisico."

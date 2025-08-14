@@ -30,6 +30,8 @@ print(Libro1.getestado())
 
 print(Libro1.devolver())
 
+print(Libro1.mostrarinfo())
+
 
 
 
