@@ -30,30 +30,14 @@ class LibFisico(MatBiblioteca):
             return False
         
     
-    def contardias(self,mesD,diaD):
-        mesP = self.fechaprestamo[0]
-        diaP = self.fechaprestamo[1]
-        diastotal = 0
-
-        if (mesD - mesP) == 0:
-            #Contar dias
-            diastotal = diaD - diaP
-        elif (mesD - mesP) == 1:
-            #Contar dias para terminar mes (31 dias)
-            diastotal = 31-diaP
-            #Contar dias del mes siguiente
-            diastotal += diaD
-        else:
-            diastotal=999
-        
-        return diastotal
+    
 
     
     def devolverLibro(self, mes, dia):
         if self.estado == "Prestado":
             
             #-Contar Dias
-            diasprestado = self.contardias(mes,dia)
+            diasprestado = self.contardias(self.fechaprestamo, mes, dia)
             print(f"Dias Prestado:{diasprestado}")
             #Validar fecha de entrega
             if diasprestado <= 7:

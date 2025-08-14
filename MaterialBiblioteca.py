@@ -73,4 +73,22 @@ class MatBiblioteca():
     def mostrarinfo():
         print("mostrar info")
         pass
+    
+
+    def contardias(self,fechaP, mesD,diaD):
+        mesP = fechaP[0]
+        diaP = fechaP[1]
+        diastotal = 0
+
+        if (mesD - mesP) == 0:
+            #Contar dias
+            diastotal = diaD - diaP
+        elif (mesD - mesP) == 1:
+            #Contar dias para terminar mes (31 dias)
+            diastotal = 31-diaP
+            #Contar dias del mes siguiente
+            diastotal += diaD
+        else:
+            diastotal=999
         
+        return diastotal
