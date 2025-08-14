@@ -24,6 +24,11 @@ print(Libro1.prestar())
 print(Libro1.getestado())
 print(Libro1.prestar())
 
+print(Libro1.devolver())
+
+print(Libro1.getestado())
+
+print(Libro1.devolver())
 
 
 

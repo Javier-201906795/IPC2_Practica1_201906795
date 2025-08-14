@@ -63,3 +63,9 @@ class MatBiblioteca():
         else:
             return False
         
+    def devolver(self):
+        if self.estado == "Prestado":
+            self.estado = "Disponible"
+            return True
+        else:
+            return False
