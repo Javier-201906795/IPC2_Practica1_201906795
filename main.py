@@ -26,6 +26,44 @@ def Verificarsiexiste(ID):
             return True
     return False
 
+def consultar(ID):
+    opcion = 0
+    Libro = None
+    #Buscar libro
+    for libro in DB:
+        if libro.getID() == ID:
+            Libro = libro
+
+    try:
+        while opcion != 9:
+            print("*"*25)
+            print("*"+" "*4+"MENU CONSULTA"+" "*5+"*")
+            print("*"*25)
+            print("*"+" 1). Autor"+" "*2+"*")
+            print("*"+" 2). Titulo"+" "*2+"*")
+            print("*"+" 3). Estado"+" "*2+"*")
+            print("*"+" 4). Fecha Prestamo"+" "*2+"*")
+            print("*"+" 5). No. Ejemplar"+" "*4+"*")
+            print("*"+" 9). Regresar"+" "*12+"*")
+            print("*"*25)
+            opcion = int(input("> "))
+            match opcion:
+                case 1:
+                    print(">Autor:")
+                case 2:
+                    print(">Titulo:")
+                case 3:
+                    print(">Estado:")
+                case 4:
+                    print(">Fecha Prestamo:")
+                case 5:
+                    print(">No. Ejemplar:")
+                case 9:
+                    print("Fin")
+                    break
+    except:
+        print("Opción no válida.")
+
 
 def Gestionar():
     opcion = 0
@@ -37,6 +75,7 @@ def Gestionar():
             print("*"+" 1). Ver Libros"+" "*8+"*")
             print("*"+" 2). Prestar Libro"+" "*5+"*")
             print("*"+" 3). Devolver Libro"+" "*4+"*")
+            print("*"+" 4). Consultar Libro"+" "*4+"*")
             print("*"+" 9). Regresar"+" "*10+"*")
             print("*"*25)
             opcion = int(input("> "))
@@ -101,6 +140,15 @@ def Gestionar():
                                 else:
                                     print("Libro devuelto TARDE.")
                                 break
+                case 4:
+                    print(">Consultar Libro")
+                    idlibro = str(input("ID del libro a consultar: "))
+                    # Verificar si el libro existe
+                    existelibro = Verificarsiexiste(idlibro)
+                    if existelibro == True:
+                        consultar(idlibro)
+                    else:
+                        print("El libro no existe.")
 
                 case 9:
                     print(">Regresar")
