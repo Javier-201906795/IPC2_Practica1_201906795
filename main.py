@@ -4,15 +4,8 @@ import random
 #Base de datos
 DB = []
 
-#Registra nuevo material ()
-#Prestar ()
-#Devolver()
-#Consultarinfo()
-
-
-
-Libro1 = LibFisico("El principito", "Desconocido",  1)
-Libro2 = LibDigital("El hombre araña", "marvel",  15)
+# Libro1 = LibFisico("El principito", "Desconocido",  1)
+# Libro2 = LibDigital("El hombre araña", "marvel",  15)
 
 
 def consultarLibros():
