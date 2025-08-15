@@ -11,14 +11,14 @@ class LibFisico(MatBiblioteca):
     def __init__(self, titulo, autor, numejemplar):
         super().__init__(titulo, autor)
         self.numejemplar = numejemplar
-        self.fechaprestamo = None
+        self.fechaprestamo = [0,0]
 
     def gettitulolibro(self):
         return self.gettitulo()
     
     def mostrarinfo(self):
-        return f"Titulo: {self.gettitulo()}, Autor: {self.getmodelo()}, ID: {self.getID()}, Estado: {self.getestado()}, Ejemplar: {self.numejemplar}, Libro: Fisico."
-    
+        return f"ID: {self.getID()}, Titulo: {self.gettitulo()}, Autor: {self.getmodelo()}, Estado: {self.getestado()}, Ejemplar: {self.numejemplar}, Libro: Fisico, Fecha Prestamo: mes:{self.fechaprestamo[0]} - dia:{self.fechaprestamo[1]}"
+
     def prestarLibro(self, mes, dia):
         if self.estado == "Disponible":
             #Clase madre
@@ -40,8 +40,12 @@ class LibFisico(MatBiblioteca):
             if diasprestado <= 7:
                 #Clase madre
                 self.devolver()
+                self.fechaprestamo = [0,0]  # Reset the loan date
                 return True
             else:
+                #Clase madre
+                self.devolver()
+                self.fechaprestamo = [0,0]  # Reset the loan date
                 return False
             
             
