@@ -10,8 +10,7 @@ DB = []
 #Consultarinfo()
 
 
-print("Practica 1")
-print("nuevo libro")
+
 Libro1 = LibFisico("El principito", "Desconocido",  1)
 Libro2 = LibDigital("El hombre araña", "marvel",  15)
 
@@ -138,7 +137,6 @@ def Registrar():
                     print(DB[-1].mostrarinfo())
                 case 2:
                     print(">Registrar Libro DIGITAL")
-                    print(">Registrar Libro FISICO")
                     titulo, autor = LibroTituloAutor()
                     tamaño = int(input("Tamaño archivo (MB): "))
                     DB.append(LibDigital(titulo, autor,  tamaño))
@@ -180,6 +178,8 @@ def Menu():
 
 
 if __name__ == "__main__":  
+    print("Practica 1")
+    print("Javier Yllescas - 201906795")
     Menu()
 
 
