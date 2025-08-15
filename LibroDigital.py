@@ -12,11 +12,11 @@ class LibDigital(MatBiblioteca):
     def __init__(self, titulo, autor, tamanoarchivo):
         super().__init__(titulo, autor)
         self.tamanoarchivo = tamanoarchivo
-        self.fechaprestamo = None
+        self.fechaprestamo = [0,0]
 
     
     def mostrarinfo(self):
-        return f"Titulo: {self.gettitulo()}, Autor: {self.getmodelo()}, ID: {self.getID()}, Estado: {self.getestado()}, Tamaño Archivo: {self.tamanoarchivo} MB, Libro: Digital."
+        return f"ID: {self.getID()}, Titulo: {self.gettitulo()}, Autor: {self.getmodelo()}, Estado: {self.getestado()}, Tamaño Archivo: {self.tamanoarchivo} MB, Libro: Digital, Fecha Prestamo: mes:{self.fechaprestamo[0]} - dia:{self.fechaprestamo[1]}"
     
     def prestarLibro(self, mes, dia):
         if self.estado == "Disponible":
@@ -38,9 +38,11 @@ class LibDigital(MatBiblioteca):
             if diasprestado <= 3:
                 #Clase madre
                 self.devolver()
+                self.fechaprestamo = [0,0]  # Reset the loan date
                 return True
             else:
                 #Clase madre
                 self.devolver()
+                self.fechaprestamo = [0,0]  # Reset the loan date
                 return False
             
