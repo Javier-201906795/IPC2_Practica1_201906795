@@ -28,6 +28,11 @@ def LibroTituloAutor():
 
 
 
+def Verificarsiexiste(ID):
+    for libro in DB:
+        if libro.getID() == ID:
+            return True
+    return False
 
 
 def Gestionar():
@@ -51,25 +56,36 @@ def Gestionar():
                     print(">Prestar Libro")
                     idlibro = str(input("ID del libro a prestar: "))
                     # Verificar si el libro existe
-                    existelibro = False
-                    for libro in DB:
-                        if libro.getID() == idlibro:
-                            existelibro = True
+                    existelibro = Verificarsiexiste(idlibro)
+                    
                             
                     if existelibro == False:
                         print("El libro no existe.")   
                     else:
                         #Si existe, Preguntar Fecha Actual
                         mes = int(input("Mes Actual: "))
+                        #Validar mes
+                        if mes < 1 or mes > 12:
+                            print("Mes no válido. Debe ser entre 1 y 12.")
+                            mes = int(input("Mes Actual: "))
                         dia = int(input("Día Actual: "))
+                        #Validar dia
+                        if dia < 1 or dia > 31:
+                            print("Día no válido. Debe ser entre 1 y 31.")
+                            dia = int(input("Día Actual: "))
                         #Buscar y prestar libro
                         for libro in DB:
                             if libro.getID() == idlibro:
                                 libro.prestarLibro(mes,dia)
                                 break
+                    
 
                 case 3:
                     print(">Devolver Libro")
+                    idlibro = str(input("ID del libro a devolver: "))
+                    # Verificar si el libro existe
+                    existelibro = Verificarsiexiste(idlibro)
+
                 case 9:
                     print(">Regresar")
                     break
