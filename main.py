@@ -21,7 +21,7 @@ def consultarLibros():
         print(libro.mostrarinfo())
 
 
-def RegistrarLibro():
+def LibroTituloAutor():
     titulo = str(input("Titulo: "))
     autor = str(input("Autor: "))
     return titulo, autor
@@ -42,14 +42,17 @@ def Registrar():
             match opcion:
                 case 1:
                     print(">Registrar Libro FISICO")
-                    DB.append(LibFisico("El principito", "Desconocido",  1))
-                    consultarLibros()
-                    titulo, autor = RegistrarLibro()
-                    print(f"Titulo: {titulo}, Autor: {autor}")
+                    titulo, autor = LibroTituloAutor()
+                    numejemplar = int(input("Numero de ejemplar: "))
+                    DB.append(LibFisico(titulo, autor,  numejemplar))
+                    print(DB[-1].mostrarinfo())
                 case 2:
                     print(">Registrar Libro DIGITAL")
-                    DB.append(LibDigital("El hombre araña", "marvel",  15))
-                    consultarLibros()
+                    print(">Registrar Libro FISICO")
+                    titulo, autor = LibroTituloAutor()
+                    tamaño = int(input("Tamaño archivo (MB): "))
+                    DB.append(LibDigital(titulo, autor,  tamaño))
+                    print(DB[-1].mostrarinfo())
                 case 9:
                     print("Fin")
                     break

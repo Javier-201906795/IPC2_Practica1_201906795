@@ -16,7 +16,7 @@ class LibDigital(MatBiblioteca):
 
     
     def mostrarinfo(self):
-        return f"Titulo: {self.gettitulo()}, Autor: {self.getmodelo()}, ID: {self.getID()}, Estado: {self.getestado()}, Tamaño Archivo: {self.tamanoarchivo}, Libro: Digital."
+        return f"Titulo: {self.gettitulo()}, Autor: {self.getmodelo()}, ID: {self.getID()}, Estado: {self.getestado()}, Tamaño Archivo: {self.tamanoarchivo} MB, Libro: Digital."
     
     def prestarLibro(self, mes, dia):
         if self.estado == "Disponible":
