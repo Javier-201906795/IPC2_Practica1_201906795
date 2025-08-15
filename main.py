@@ -31,21 +31,24 @@ def Gestionar():
     try:
         while opcion != 9:
             print("*"*25)
-            print("*"+" "*9+"MENU"+" "*9+"*")
+            print("*"+" "*4+"MENU GESTIONAR"+" "*5+"*")
             print("*"*25)
-            print("*"+" 1). Ver Libros"+" "*2+"*")
-            print("*"+" 2). Gestionar Libro"+" "*2+"*")
-            print("*"+" 9). Salir"+" "*12+"*")
+            print("*"+" 1). Ver Libros"+" "*8+"*")
+            print("*"+" 2). Prestar Libro"+" "*5+"*")
+            print("*"+" 3). Devolver Libro"+" "*4+"*")
+            print("*"+" 9). Regresar"+" "*10+"*")
             print("*"*25)
             opcion = int(input("> "))
             match opcion:
                 case 1:
                     print(">Ver Libro Disponibles")
-                    Registrar()
+                    consultarLibros()
                 case 2:
-                    print(">Gestionar Libro")
+                    print(">Prestar Libro")
+                case 3:
+                    print(">Devolver Libro")
                 case 9:
-                    print("Fin")
+                    print(">Regresar")
                     break
     except:
         print("Opción no válida.")
@@ -103,6 +106,7 @@ def Menu():
                     Registrar()
                 case 2:
                     print(">Gestionar Libro")
+                    Gestionar()
                 case 9:
                     print("Fin")
                     break
