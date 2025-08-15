@@ -62,7 +62,7 @@ def Registrar():
             print("*"+" "*8+"MENU REGISTRAR"+" "*7+"*")
             print("*"*31)
             print("*"+" 1). Registrar Libro FISICO"+" "*2+"*")
-            print("*"+" 1). Registrar Libro DIGITAL"+" "*1+"*")
+            print("*"+" 2). Registrar Libro DIGITAL"+" "*1+"*")
             print("*"+" 9). Regresar"+" "*16+"*")
             print("*"*31)
             opcion = int(input("> "))
