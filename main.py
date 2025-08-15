@@ -26,6 +26,10 @@ def LibroTituloAutor():
     autor = str(input("Autor: "))
     return titulo, autor
 
+
+
+
+
 def Gestionar():
     opcion = 0
     try:
@@ -45,6 +49,25 @@ def Gestionar():
                     consultarLibros()
                 case 2:
                     print(">Prestar Libro")
+                    idlibro = str(input("ID del libro a prestar: "))
+                    # Verificar si el libro existe
+                    existelibro = False
+                    for libro in DB:
+                        if libro.getID() == idlibro:
+                            existelibro = True
+                            
+                    if existelibro == False:
+                        print("El libro no existe.")   
+                    else:
+                        #Si existe, Preguntar Fecha Actual
+                        mes = int(input("Mes Actual: "))
+                        dia = int(input("Día Actual: "))
+                        #Buscar y prestar libro
+                        for libro in DB:
+                            if libro.getID() == idlibro:
+                                libro.prestarLibro(mes,dia)
+                                break
+
                 case 3:
                     print(">Devolver Libro")
                 case 9:
