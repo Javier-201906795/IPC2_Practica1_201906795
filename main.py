@@ -103,7 +103,11 @@ def Gestionar():
                         #Buscar y prestar libro
                         for libro in DB:
                             if libro.getID() == idlibro:
-                                libro.devolverLibro(mes,dia)
+                                atiempo = libro.devolverLibro(mes,dia)
+                                if atiempo == True:
+                                    print("Libro devuelto a tiempo.")
+                                else:
+                                    print("Libro devuelto TARDE.")
                                 break
 
                 case 9:
