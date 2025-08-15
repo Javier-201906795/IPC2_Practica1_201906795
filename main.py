@@ -85,6 +85,26 @@ def Gestionar():
                     idlibro = str(input("ID del libro a devolver: "))
                     # Verificar si el libro existe
                     existelibro = Verificarsiexiste(idlibro)
+                    
+                    if existelibro == False:
+                        print("El libro no existe.")   
+                    else:
+                        #Si existe, Preguntar Fecha Actual
+                        mes = int(input("Mes Devolucion: "))
+                        #Validar mes
+                        if mes < 1 or mes > 12:
+                            print("Mes no válido. Debe ser entre 1 y 12.")
+                            mes = int(input("Mes Devolucion: "))
+                        dia = int(input("Día Devolucion: "))
+                        #Validar dia
+                        if dia < 1 or dia > 31:
+                            print("Día no válido. Debe ser entre 1 y 31.")
+                            dia = int(input("Día Devolucion: "))
+                        #Buscar y prestar libro
+                        for libro in DB:
+                            if libro.getID() == idlibro:
+                                libro.devolverLibro(mes,dia)
+                                break
 
                 case 9:
                     print(">Regresar")
