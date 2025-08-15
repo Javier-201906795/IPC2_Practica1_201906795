@@ -2,7 +2,7 @@ from LibroFisico import LibFisico
 from LibroDigital import LibDigital
 import random
 #Base de datos
-
+DB = []
 
 #Registra nuevo material ()
 #Prestar ()
@@ -16,25 +16,40 @@ Libro1 = LibFisico("El principito", "Desconocido",  1)
 Libro2 = LibDigital("El hombre araña", "marvel",  15)
 
 
+def consultarLibros():
+    for libro in DB:
+        print(libro.mostrarinfo())
+
+
+def RegistrarLibro():
+    titulo = str(input("Titulo: "))
+    autor = str(input("Autor: "))
+    return titulo, autor
 
 
 def Registrar():
     opcion = 0
     try:
         while opcion != 9:
-            print("*"*25)
-            print("*"+" "*4+"MENU REGISTRAR"+" "*4+"*")
-            print("*"*25)
-            print("*"+" 1). Registrar Libro"+" "*2+"*")
-            print("*"+" 2). Gestionar Libro"+" "*2+"*")
-            print("*"+" 9). Regresar"+" "*9+"*")
-            print("*"*25)
+            print("*"*31)
+            print("*"+" "*8+"MENU REGISTRAR"+" "*7+"*")
+            print("*"*31)
+            print("*"+" 1). Registrar Libro FISICO"+" "*2+"*")
+            print("*"+" 1). Registrar Libro DIGITAL"+" "*1+"*")
+            print("*"+" 9). Regresar"+" "*16+"*")
+            print("*"*31)
             opcion = int(input("> "))
             match opcion:
                 case 1:
-                    print("Registrar Libro")
+                    print(">Registrar Libro FISICO")
+                    DB.append(LibFisico("El principito", "Desconocido",  1))
+                    consultarLibros()
+                    titulo, autor = RegistrarLibro()
+                    print(f"Titulo: {titulo}, Autor: {autor}")
                 case 2:
-                    print("Gestionar Libro")
+                    print(">Registrar Libro DIGITAL")
+                    DB.append(LibDigital("El hombre araña", "marvel",  15))
+                    consultarLibros()
                 case 9:
                     print("Fin")
                     break
@@ -57,10 +72,10 @@ def Menu():
             opcion = int(input("> "))
             match opcion:
                 case 1:
-                    print("Registrar Libro")
+                    print(">Registrar Libro")
                     Registrar()
                 case 2:
-                    print("Gestionar Libro")
+                    print(">Gestionar Libro")
                 case 9:
                     print("Fin")
                     break
