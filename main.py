@@ -33,31 +33,46 @@ def consultar(ID):
     for libro in DB:
         if libro.getID() == ID:
             Libro = libro
-
+    #Tipo libro
+    tipo_libro = Libro.getTipo()
+    print("Tipo de Libro: " + tipo_libro)
     try:
         while opcion != 9:
             print("*"*25)
             print("*"+" "*4+"MENU CONSULTA"+" "*5+"*")
             print("*"*25)
-            print("*"+" 1). Autor"+" "*2+"*")
-            print("*"+" 2). Titulo"+" "*2+"*")
-            print("*"+" 3). Estado"+" "*2+"*")
-            print("*"+" 4). Fecha Prestamo"+" "*2+"*")
-            print("*"+" 5). No. Ejemplar"+" "*4+"*")
-            print("*"+" 9). Regresar"+" "*12+"*")
+            print("*"+" 1). Autor")
+            print("*"+" 2). Titulo")
+            print("*"+" 3). Estado")
+            print("*"+" 4). Fecha Prestamo")
+            if tipo_libro == "Fisico":
+                print("*"+" 5). No. Ejemplar")
+            else:
+                print("*"+" 5). Tamaño Archivo")
+            print("*"+" 9). Regresar")
             print("*"*25)
             opcion = int(input("> "))
             match opcion:
                 case 1:
                     print(">Autor:")
+                    print(">> " + Libro.getautor())
                 case 2:
                     print(">Titulo:")
+                    print(">> " + Libro.gettitulo())
                 case 3:
                     print(">Estado:")
+                    print(">> " + Libro.getestado())
                 case 4:
                     print(">Fecha Prestamo:")
+                    print(">> " + Libro.getfechaprestamo())
                 case 5:
-                    print(">No. Ejemplar:")
+                    if tipo_libro == "Fisico":
+                        print(">No. Ejemplar:")
+                        print(">> " + str(Libro.getnumeroejemplar()))
+                    else:
+                        print(">Tamaño Archivo:")
+                        print(">> " + str(Libro.gettamanoarichivo()))
+
                 case 9:
                     print("Fin")
                     break

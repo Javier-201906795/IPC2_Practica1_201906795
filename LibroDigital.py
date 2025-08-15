@@ -14,9 +14,17 @@ class LibDigital(MatBiblioteca):
         self.tamanoarchivo = tamanoarchivo
         self.fechaprestamo = [0,0]
 
+    def getTipo(self):
+        return "Digital"
     
+    def getfechaprestamo(self):
+        return f"Fecha Prestamo: mes:{self.fechaprestamo[0]} - dia:{self.fechaprestamo[1]}"
+    
+    def gettamanoarichivo(self):
+        return self.tamanoarchivo
+
     def mostrarinfo(self):
-        return f"ID: {self.getID()}, Titulo: {self.gettitulo()}, Autor: {self.getmodelo()}, Estado: {self.getestado()}, Tamaño Archivo: {self.tamanoarchivo} MB, Libro: Digital, Fecha Prestamo: mes:{self.fechaprestamo[0]} - dia:{self.fechaprestamo[1]}"
+        return f"ID: {self.getID()}, Titulo: {self.gettitulo()}, Autor: {self.getautor()}, Estado: {self.getestado()}, Tamaño Archivo: {self.tamanoarchivo} MB, Libro: Digital, Fecha Prestamo: mes:{self.fechaprestamo[0]} - dia:{self.fechaprestamo[1]}"
     
     def prestarLibro(self, mes, dia):
         if self.estado == "Disponible":

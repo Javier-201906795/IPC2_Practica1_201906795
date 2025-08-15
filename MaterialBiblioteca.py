@@ -25,7 +25,7 @@ class MatBiblioteca():
 
     def __init__(self, titulo, autor):
         self.titulo = titulo
-        self.modelo = autor
+        self.autor = autor
         self.ID = self.nuevoID()
         self.estado = "Disponible"
 
@@ -34,8 +34,8 @@ class MatBiblioteca():
     def gettitulo (self):
         return self.titulo
 
-    def getmodelo (self)  :
-        return self.modelo
+    def getautor (self)  :
+        return self.autor
     
     def getID (self):
         return self.ID
